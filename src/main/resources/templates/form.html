@@ -2,10 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
+  <script th:src="@{/js/jquery-3.6.0.min.js}"></script>
+  <script th:src="@{/js/ajax.js}"></script>
   <title>Title</title>
 </head>
 <body>
-  <form th:action="@{/form}" th:object="${user}" method="post">
+  <form th:action="@{/form}" th:object="${user}" method="post" id="form">
     <label for="name">氏名：</label>
     <input type="text" th:field="*{name}"><br>
     
@@ -17,5 +19,6 @@
     
     <button>送信</button>
   </form>
+  <button id="ajax-button">ajax送信</button>
 </body>
 </html>
